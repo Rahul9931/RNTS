@@ -74,5 +74,8 @@ export default StyleSheet.create({
     },
     TextColor:{
         color:'white'
+    },
+    boldMedium:{
+        fontWeight:'500'
     }
 })
