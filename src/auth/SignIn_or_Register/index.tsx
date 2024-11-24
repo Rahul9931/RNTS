@@ -1,13 +1,20 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { Image, Text, View } from "react-native";
 import HeaderSignIn from "../../components/HeaderSignIn";
 import styles from "./styles";
 import ButtonOutline from "../../components/ButtonOutline";
 
-const SignIn_or_Register = () => {
+const SignIn_or_Register = ({navigation}) => {
     const handleClose = () => {
         console.log('Close button pressed');
       };
+      const openSignIn = useCallback(()=>{
+        navigation.navigate("SignIn")
+      },[])
+
+      const openSugnUp = useCallback(()=>{
+        navigation.navigate("CreateAccount")
+      },[])
     return(
         <View style={styles.parent_container}>
             <View>
@@ -20,8 +27,8 @@ const SignIn_or_Register = () => {
             </View>
             <View style={styles.content2}>
             <Text style={[styles.fontSize_small,styles.text_lite]}>SIGN IN OR REGISTER</Text>
-            <ButtonOutline title="sign in" onPress={handleClose}/>
-            <ButtonOutline title="Create Account" onPress={handleClose}/>
+            <ButtonOutline title="sign in" onPress={openSignIn}/>
+            <ButtonOutline title="Create Account" onPress={openSugnUp}/>
             </View>
             
         </View>

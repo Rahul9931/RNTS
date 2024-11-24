@@ -1,17 +1,8 @@
-import React from "react";
-import { Text, View } from "react-native";
-import HeaderSignIn from "./src/components/HeaderSignIn";
-import SignIn_or_Register from "./src/auth/SignIn_or_Register";
-import Example from "./src/Example/Example";
-import styles from "./src/theme/styles";
+import React from 'react';
+import RootNavigator from './src/navigation/RootNavigator';
 
-const App = ()=> {
-  
-  return(
-    <View style={styles.parent_container}>
-      <SignIn_or_Register/>
-    </View>
-  )
-}
+const App = () => {
+  return <RootNavigator />;
+};
 
 export default App;
